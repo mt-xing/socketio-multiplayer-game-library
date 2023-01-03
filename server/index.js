@@ -5,7 +5,7 @@ import express from 'express';
 import { createServer } from 'http';
 // @ts-ignore
 import { Server } from 'socket.io';
-import OnuwServer from './server.js';
+import MultiplayerServer from './server.js';
 
 const port = process.env.PORT || 8080;
 
@@ -24,4 +24,4 @@ http.listen(port, () => {
 	console.log(`listening on *:${port}`);
 });
 
-const onuwGame = new OnuwServer(io.of('/onuw'));
+const testGame = new MultiplayerServer(io.of('/test'), 2);
